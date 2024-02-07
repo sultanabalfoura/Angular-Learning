@@ -1,1 +1,12 @@
-<p>main works!</p>
+
+
+<div class="d-flex d-inline-block flex-wrap justify-contact-around" >
+    <div  class="card m-4" style="width: 18rem;" *ngFor="let item of movies">
+        <img class="card-img-top" src={{item.i.imageUrl}} alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Movie Name: {{item.l}} </h5>
+            <p class="card-text">Date: {{item.s}} </p>
+            <a href="#" class="btn btn-primary">Watch</a>
+        </div>
+    </div>
+    </div>
