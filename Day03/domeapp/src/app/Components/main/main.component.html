@@ -1,0 +1,40 @@
+<div>
+  <label for="categorySelect"> Select Category</label>
+  <select id="categorySelect" [(ngModel)]="selectCategory">
+    <option *ngFor="let Category of catlist" [value]="Category.id">{{Category.name}}</option>
+  </select>
+
+  <h5>your select : {{selectCategory}}</h5>
+</div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td >ID</td>
+      <td >Name</td>
+      <td >ImageUrl</td>
+      <td >Quantity</td>
+      <td >Price</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of prodlist">
+      <td> {{item.id}} </td>
+      <td>{{item.name}}</td>
+      <td><img [src]="item.imgUrl" ></td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.price}}</td>
+      <td> <input #QuantityInput type="number" class="form-controller" > </td>
+      <td> <button class="btn btn-warning" (click) ="TotalPrice(item.price, QuantityInput.value)" > buy </button> </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<div>
+  <h3>
+    Total Price : {{totalPrice}} 
+  </h3>
+  
+</div>
